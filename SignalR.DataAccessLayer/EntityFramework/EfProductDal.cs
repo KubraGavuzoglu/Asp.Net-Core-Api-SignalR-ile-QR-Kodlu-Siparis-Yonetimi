@@ -1,4 +1,5 @@
-﻿using SignalR.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
 using SignalR.DataAccessLayer.Repositories;
 using SignalREntityLayer.Entities;
@@ -13,12 +14,12 @@ namespace SignalR.DataAccessLayer.EntityFramework
 
 
 
-        //public List<Product> GetProductsWithCategories()
-        //{
-        //    var context = new SignalRContext();
-        //    var values = context.Products.Include(x => x.Category).ToList();
-        //    return values;
-        //}
+        public List<Product> GetProductsWithCategories()
+        {
+            var context = new SignalRContext();
+            var values = context.Products.Include(x => x.Category).ToList();
+            return values;
+        }
 
         //public decimal ProductAvgPriceByHamburger()
         //{
