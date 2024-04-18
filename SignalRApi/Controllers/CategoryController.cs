@@ -53,7 +53,7 @@ namespace SignalRApi.Controllers
         }
 
 
-        [HttpGet("GetCategory")]
+        [HttpGet("{id}")]
         public IActionResult GetCategory(int id)
         {
             var value = _categoryService.TGetByID(id);
