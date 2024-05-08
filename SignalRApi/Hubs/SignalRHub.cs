@@ -73,72 +73,74 @@ namespace SignalRApi.Hubs
             var value16 = _menuTableService.TMenuTableCount();
             await Clients.All.SendAsync("ReceiveMenuTableCount", value16);
         }
-        //public async Task SendProgress()
-        //{
-        //    var value = _moneyCaseService.TTotalMoneyCaseAmount();
-        //    await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount", value.ToString("0.00") + "₺");
+        public async Task SendProgress()
+        {
 
-        //    var value2 = _orderService.TActiveOrderCount();
-        //    await Clients.All.SendAsync("ReceiveTActiveOrderCount", value2);
+            var value = _moneyCaseService.TTotalMoneyCaseAmount();
+           await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount", value.ToString("0.00") + "₺");
 
-        //    var value3 = _menuTableService.TMenuTableCount();
-        //    await Clients.All.SendAsync("ReceiveMenuTableCount", value3);
+            var value2 = _orderService.TActiveOrderCount();
+            await Clients.All.SendAsync("ReceiveTActiveOrderCount", value2);
 
-        //    var value5 = _productService.TProductPriceAvg();
-        //    await Clients.All.SendAsync("ReceiveProductPriceAvg", value5);
+            var value3 = _menuTableService.TMenuTableCount();
+            await Clients.All.SendAsync("ReceiveMenuTableCount", value3);
 
-        //    var value6 = _productService.TProductAvgPriceByHamburger();
-        //    await Clients.All.SendAsync("ReceiveAvgPriceByHamburger", value6);
+            var value5 = _productService.TProductPriceAvg();
+            await Clients.All.SendAsync("ReceiveProductPriceAvg", value5);
 
-        //    var value7 = _productService.TProductCountByCategoryNameDrink();
-        //    await Clients.All.SendAsync("ReceiveProductCountByCategoryNameDrink", value7);
+            var value6 = _productService.TProductAvgPriceByHamburger();
+            await Clients.All.SendAsync("ReceiveAvgPriceByHamburger", value6);
 
-        //    var value8 = _orderService.TTotalOrderCount();
-        //    await Clients.All.SendAsync("ReceiveTotalOrderCount", value8);
+            var value7 = _productService.TProductCountByCategoryNameDrink();
+            await Clients.All.SendAsync("ReceiveProductCountByCategoryNameDrink", value7);
 
-        //    var value9 = _productService.TProductPriceBySteakBurger();
-        //    await Clients.All.SendAsync("ReceiveProductPriceBySteakBurger", value9);
+            var value8 = _orderService.TTotalOrderCount();
+            await Clients.All.SendAsync("ReceiveTotalOrderCount", value8);
 
-        //    //var value10 = _productService.TTotalPriceByDrinkCategory();
-        //    //await Clients.All.SendAsync("ReceiveTotalPriceByDrinkCategory", value10);
+            var value9 = _productService.TProductPriceBySteakBurger();
+            await Clients.All.SendAsync("ReceiveProductPriceBySteakBurger", value9);
 
-        //    //var value11 = _productService.TTotalPriceBySaladCategory();
-        //    //await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
-        //}
-        //public async Task GetBookingList()
-        //{
-        //    var values = _bookingService.TGetListAll();
-        //    await Clients.All.SendAsync("ReceiveBookingList", values);
-        //}
-        //public async Task SendNotification()
-        //{
-        //    var value = _notificationService.TNotificationCountByStatusFalse();
-        //    await Clients.All.SendAsync("ReceiveNotificationCountByFalse", value);
+            //var value10 = _productService.TTotalPriceByDrinkCategory();
+            //await Clients.All.SendAsync("ReceiveTotalPriceByDrinkCategory", value10);
 
-        //    var notificationListByFalse = _notificationService.TGetAllNotificationByFalse();
-        //    await Clients.All.SendAsync("ReceiveNotificationListByFalse", notificationListByFalse);
-        //}
-        //public async Task GetMenuTableStatus()
-        //{
-        //    var value = _menuTableService.TGetListAll();
-        //    await Clients.All.SendAsync("ReceiveMenuTableStatus", value);
-        //}
-        //public async Task SendMessage(string user, string message)
-        //{
-        //    await Clients.All.SendAsync("ReceiveMessage", user, message);
-        //}
-        //public override async Task OnConnectedAsync()
-        //{
-        //    clientCount++;
-        //    await Clients.All.SendAsync("ReceiveClientCount", clientCount);
-        //    await base.OnConnectedAsync();
-        //}
-        //public override async Task OnDisconnectedAsync(Exception? exception)
-        //{
-        //    clientCount--;
-        //    await Clients.All.SendAsync("ReceiveClientCount", clientCount);
-        //    await base.OnDisconnectedAsync(exception);
-        //}
+            //    //var value11 = _productService.TTotalPriceBySaladCategory();
+            //    //await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
+            //}
+            //public async Task GetBookingList()
+            //{
+            //    var values = _bookingService.TGetListAll();
+            //    await Clients.All.SendAsync("ReceiveBookingList", values);
+            //}
+            //public async Task SendNotification()
+            //{
+            //    var value = _notificationService.TNotificationCountByStatusFalse();
+            //    await Clients.All.SendAsync("ReceiveNotificationCountByFalse", value);
+
+            //    var notificationListByFalse = _notificationService.TGetAllNotificationByFalse();
+            //    await Clients.All.SendAsync("ReceiveNotificationListByFalse", notificationListByFalse);
+            //}
+            //public async Task GetMenuTableStatus()
+            //{
+            //    var value = _menuTableService.TGetListAll();
+            //    await Clients.All.SendAsync("ReceiveMenuTableStatus", value);
+            //}
+            //public async Task SendMessage(string user, string message)
+            //{
+            //    await Clients.All.SendAsync("ReceiveMessage", user, message);
+            //}
+            //public override async Task OnConnectedAsync()
+            //{
+            //    clientCount++;
+            //    await Clients.All.SendAsync("ReceiveClientCount", clientCount);
+            //    await base.OnConnectedAsync();
+            //}
+            //public override async Task OnDisconnectedAsync(Exception? exception)
+            //{
+            //    clientCount--;
+            //    await Clients.All.SendAsync("ReceiveClientCount", clientCount);
+            //    await base.OnDisconnectedAsync(exception);
+
+        }
 
 
 
