@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="btn-box">
-                @* <a href="/Baskets/Index/"> *@
+                <a href="/Baskets/Index/"> 
                     Sepete Git
                 </a>
             </div>
@@ -131,7 +131,7 @@
             $.ajax({
                 type: 'POST',
                 data: { item: id },
-                // url: "/Menu/AddBasket/" + id,
+                 url: "/Menu/AddBasket/" + id,
                 contentType: 'json',
                 success: function () {
                     swal("Seçilen Ürün ID:" + id, "Seçtiğiniz Ürün Sepete Eklendi!", "success");
